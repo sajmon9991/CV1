@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Profesjonalne CV - Dark Mode</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+  /* Reset */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: #121212;
+    color: #eee;
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: 30px 15px;
+  }
+
+  .container {
+    max-width: 900px;
+    background: #1e1e1e;
+    margin: 0 auto;
+    border-radius: 15px;
+    padding: 40px 50px;
+    box-shadow: 0 0 40px rgba(0,0,0,0.7);
+    animation: fadeInUp 0.8s ease forwards;
+  }
+
+  h1, h2, h3 {
+    font-weight: 700;
+  }
+  h1 {
+    font-size: 3rem;
+    color: #00ffc8;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+  }
+  h2 {
+    font-size: 2rem;
+    border-bottom: 3px solid #00ffc8;
+    padding-bottom: 6px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+  }
+  h3 {
+    font-size: 1.2rem;
+    color: #00b38a;
+  }
+
+  p {
+    margin-bottom: 15px;
+    color: #ccc;
+  }
+
+  ul {
+    list-style-type: none;
+    margin-bottom: 20px;
+  }
+  ul li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 12px;
+  }
+  ul li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #00ffc8;
+    font-weight: 700;
+  }
+
+  /* Kontakt */
+  .contact-info {
+    margin-top: 8px;
+    font-weight: 600;
+    color: #00b38a;
+  }
+  .contact-info a {
+    color: #00b38a;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  .contact-info a:hover {
+    color: #00ffc8;
+    text-decoration: underline;
+  }
+
+  /* Umiejętności z progress bar */
+  .skill {
+    margin-bottom: 18px;
+  }
+  .skill-name {
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #00b38a;
+  }
+  .progress-bar {
+    width: 100%;
+    background: #333;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 15px;
+  }
+  .progress {
+    height: 15px;
+    background: linear-gradient(90deg, #00ffc8, #00b38a);
+    width: 0;
+    border-radius: 20px;
+    animation: progressAnim 1.5s ease forwards;
+  }
+
+  /* Sekcja doświadczenia */
+  .job {
+    margin-bottom: 30px;
+  }
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .job-title {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #00ffc8;
+  }
+  .job-date {
+    font-style: italic;
+    color: #555;
+  }
+  .job-desc {
+    margin-top: 6px;
+    color: #ccc;
+  }
+
+  /* Link portfolio */
+  .portfolio a {
+    color: #00ffc8;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .portfolio a:hover {
+    text-decoration: underline;
+  }
+
+  /* Animacje */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes progressAnim {
+    to {
+      width: var(--progress);
+    }
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    .container {
+      padding: 30px 25px;
+    }
+    h1 {
+      font-size: 2.2rem;
+    }
+    h2 {
+      font-size: 1.6rem;
+      margin-top: 40px;
+      margin-bottom: 15px;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="container" role="main" aria-label="CV Jana Kowalskiego">
+    <header>
+      <h1>Jan Kowalski</h1>
+      <p class="contact-info">Frontend Developer | Warszawa</p>
+      <p class="contact-info">
+        <a href="mailto:jan.kowalski@email.com">jan.kowalski@email.com</a> | 
+        <a href="tel:+48123456789">+48 123 456 789</a>
+      </p>
+    </header>
+
+    <section aria-labelledby="about-me">
+      <h2 id="about-me">O mnie</h2>
+      <p>Jestem front-end developerem z ponad 4-letnim doświadczeniem w tworzeniu nowoczesnych aplikacji internetowych. Specjalizuję się w React, Next.js i optymalizacji wydajności. Lubię czysty, responsywny design i dobrą współpracę z zespołem.</p>
+    </section>
+
+    <section aria-labelledby="experience">
+      <h2 id="experience">Doświadczenie zawodowe</h2>
+
+      <div class="job">
+        <div class="job-header">
+          <div class="job-title">Frontend Developer @ XYZ Studio</div>
+          <div class="job-date">2020 – obecnie</div>
+        </div>
+        <p class="job-desc">
+          Tworzenie aplikacji SPA w React i Next.js, współpraca z zespołem UX/UI, optymalizacja i automatyzacja procesów CI/CD.
+        </p>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <div class="job-title">Junior Developer @ ABC Software</div>
+          <div class="job-date">2018 – 2020</div>
+        </div>
+        <p class="job-desc">
+          Realizacja projektów front-endowych, udział w kodowaniu i testowaniu, praca z REST API.
+        </p>
+      </div>
+    </section>
+
+    <section aria-labelledby="skills">
+      <h2 id="skills">Umiejętności</h2>
+
+      <div class="skill">
+        <div class="skill-name">HTML5</div>
+        <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress" style="--progress: 90%; width: 90%;"></div>
+        </div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-name">CSS3</div>
+        <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress" style="--progress: 85%; width: 85%;"></div>
+        </div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-name">JavaScript</div>
+        <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress" style="--progress: 80%; width: 80%;"></div>
+        </div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-name">React</div>
+        <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress" style="--progress: 75%; width: 75%;"></div>
+        </div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-name">Next.js</div>
+        <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress" style="--progress: 70%; width: 70%;"></div>
+        </div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-name">Git</div>
+        <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress" style="--progress: 75%; width: 75%;"></div>
+        </div>
+      </div>
+
+    </section>
+
+    <section aria-labelledby="portfolio">
+      <h2 id="portfolio">Portfolio &amp; Kontakt</h2>
+      <p class="portfolio">Strona portfolio: <a href="https://mojportfolio.pl" target="_blank" rel="noopener noreferrer">mojportfolio.pl</a></p>
+      <p class="portfolio">GitHub: <a href="https://github.com/jankowalski" target="_blank" rel="noopener noreferrer">github.com/jankowalski</a></p>
+    </section>
+  </div>
+</body>
+</html>
